@@ -1,0 +1,6 @@
+cd H:/Python
+git add .
+git status
+git commit -a -m "updated"
+git pull
+git push origin main

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<title>Daily Verse</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+  body,
+  h1 {
+    font-family: "Raleway", sans-serif
+  }
+
+  body,
+  html {
+    height: 100%
+  }
+
+  .bgimg {
+    background-color: black;
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+</style>
+
+<body>
+
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+      TODAY's VERSE
+    </div>
+    <div class="w3-display-middle">
+      <h2 class="w3-center w3-jumbo w3-animate-top">HELLO {{name}}</h2>
+      <hr class="w3-border-grey" style="margin:auto;width:70%">
+      <p class="w3-large w3-center">TODAY'S PROMISE TO YOU</p>
+      <h1 class="w3-large w3-center">{{ promise }}</h1>
+    </div>
+    <div class="w3-display-bottomleft w3-padding-large">
+      By <a href="http://127.0.0.1:5000/" target="_blank">Paul Samuel</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
