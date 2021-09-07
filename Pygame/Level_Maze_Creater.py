@@ -53,21 +53,47 @@ class player:
         self.y = y
         self.a = a
     def draw(self):
-        img = pygame.transform.rotate(player_img, -pa * 180/math.pi )
-        WIN.blit(img, (self.x, self.y))
-    def check(self):
-        x = 50 * round(self.x/50)
-        y = 50 * round(self.y/50)
-        rect = pygame.Rect(x, y, cube_s, cube_s)
-        pygame.draw.rect(WIN, 'yellow', rect)
-        try:
-            if (map_[y//50][x//50]) == 1:
-                self.x, self.y = 200, 200
-            elif (map_[y//50][x//50]) == 2:
-                pygame.quit()            
-        except:
-            pass
-            
+        # img = pygame.transform.rotate(player_img, -pa * 180/math.pi )
+        # WIN.blit(img, (self.x, self.y))
+        pygame.draw.circle(WIN, (255, 100, 50), (self.x, self.y), 3)
+        pygame.draw.line(WIN, (0, 255, 0), (self.x , self.y),(self.x - math.sin(pa) * 50, self.y + math.cos(pa) * 50), 3)
+        pygame.draw.line(WIN, (255,255, 10), (self.x , self.y),((self.x - math.sin(pa + math.pi/6) * 50), (self.y + math.cos(pa  + math.pi/6) * 50)), 5)
+        pygame.draw.line(WIN, (255,255, 10), (self.x , self.y),((self.x - math.sin(pa - math.pi/6) * 50), (self.y + math.cos(pa  - math.pi/6) * 50)), 5)
+
+    def cast_rays(self):
+        # define left most angle of FOV
+        start_angle = pa - math.pi/6
+        
+        # loop over casted rays
+        for ray in range(120):
+            # cast ray step by step
+            for depth in range(WIDTH):
+                # get ray target coordinates
+                target_x = self.x - math.sin(start_angle) * depth
+                target_y = self.y + math.cos(start_angle) * depth
+                
+                # covert target X, Y coordinate to map col, row
+                col = int(target_x / WIDTH//12)
+                row = int(target_y / WIDTH//12)
+                # print(row, col)
+                # calculate map square index
+                # square = row * 12 + col
+                # print(map_[int(self.x)//cube_s][int(self.y)//cube_s])
+
+                # ray hits the condition
+                # if map_[row][col] == 1:
+                #     # highlight wall that has been hit by a casted ray
+                #     pygame.draw.rect(WIN, (0, 255, 0), (col * WIDTH//12,
+                #                                         row * WIDTH//12,
+                #                                         WIDTH//12 - 2,
+                #                                         WIDTH//12 - 2))
+
+                #     # draw casted ray
+                # pygame.draw.line(WIN, (255, 255, 0), (self.x, self.y), (target_x, target_y))
+                # break
+
+            # increment angle by a single step
+            start_angle += (math.pi/3) /  120    
             
 
 
@@ -77,24 +103,20 @@ pdy = math.sin(pa) * s
 while True:
     
     keys = pygame.key.get_pressed()
-    
-    man.y += pdy
-    man.x += pdx
-    if keys[pygame.K_s]:
-        man.y -= pdy
-        man.x -= pdx
-    if keys[pygame.K_a]: 
-        pa -= man.a
-        if pa < 0:
-           pa += 2*math.pi
-        pdx = math.cos(pa) * s
-        pdy = math.sin(pa) * s
-    if keys[pygame.K_d]:
-        pa += man.a
-        if pa > 2*math.pi:
-           pa -= 2*math.pi
-        pdx = math.cos(pa) * s
-        pdy = math.sin(pa) * s
+
+    if keys[pygame.K_LEFT]: 
+        pa -= 0.1
+        # player_img = pygame.transform.rotate(player_img, player_angle)
+    if keys[pygame.K_RIGHT]: 
+        pa += 0.1
+        # player_img = pygame.transform.rotate(player_img, player_angle)
+    if keys[pygame.K_UP]:
+        man.x += -math.sin(pa) * 5
+        man.y += math.cos(pa) * 5
+    if keys[pygame.K_DOWN]:
+        man.x -= -math.sin(pa) * 5
+        man.y -= math.cos(pa) * 5
+
         
     for events in pygame.event.get():
         if events.type == pygame.QUIT:
@@ -105,7 +127,6 @@ while True:
     
     
     mp_()
-    man.check()
-
     man.draw()
+    man.cast_rays()
     pygame.time.Clock().tick(60)

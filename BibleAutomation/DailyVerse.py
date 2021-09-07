@@ -7,12 +7,14 @@ URL = 'https://www.bible.com/verse-of-the-day'
 options = webdriver.ChromeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
 driver = webdriver.Chrome(options=options)
+
 driver.get(URL)
-driver.minimize_window()
-driver.implicitly_wait(1)
+# driver.minimize_window()
 verse = driver.find_element_by_xpath('//*[@id="votd_wrapper"]/div/div/div[1]/div[1]').text
 # print(verse)
 img_web = driver.find_element_by_xpath('//*[@id="votd_wrapper"]/div/div/div[1]/amp-carousel/div[1]/div[1]/div/a/amp-img/img').get_attribute('src')
+
+
 driver.get(img_web)
 file = "VerseoftheDay.png"
 driver.save_screenshot(file)

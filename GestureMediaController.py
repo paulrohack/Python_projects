@@ -19,7 +19,7 @@ cap = cv2.VideoCapture(0)
 hand_detector = detector.HandDetector(maxHands=1, detectionCon=0.9)
 
 
-debug = False
+debug = True
 while True:
     _, img = cap.read()
     img = cv2.flip(img, 90)
