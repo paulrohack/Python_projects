@@ -36,8 +36,6 @@ while True:
     Tool_used = font.render(tool, 0, pygame.Color('black'))     
 
     # pygame.draw.line(WIN, pygame.Color('black'), (px, py), (pos), 3
-
-
     pygame.draw.rect(WIN, current_color, (0, H - buttony, buttonx, buttony))
     pygame.draw.rect(WIN, next_color, (0, H - buttony, buttonx, buttony), width=5)
 

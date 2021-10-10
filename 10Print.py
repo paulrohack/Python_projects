@@ -5,7 +5,6 @@ W, H = 600, 600
 WIN = py.display.set_mode((W, H))
 
 WIN.fill(py.Color('#3333ff'))
-
 color = '#8080ff'
 w = 20
 x, y = 0, 0

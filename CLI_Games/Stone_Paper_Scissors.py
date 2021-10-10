@@ -1,36 +1,37 @@
 import random
 
-options = ["STONE", "PAPER", "SCISSORS"]
-win = 0
-lose = 0
-n = 5
-for _ in range(n):
-    i = random.randint(0, len(options)-1)
-    computer_choice = options[i]
+random.seed(random.randint(1, 10))
+OPTIONS = ["R", "S", "P"]
+d = {"R": "ROCK", "S": "SCISSORS", "P" : "PAPER"}
 
-    # print(computer_choice)
-    user_input = input("Choose :").upper()
-    if user_input not in options:
-        print("Not in the Options\nStone, Paper, Scissors\n")
-    elif computer_choice == user_input:
+WIN = 0
+LOSE = 0
+n = 5
+for _ in range(5):
+    CC = d[random.choice(OPTIONS)]
+    USER_INPUT = input("Choose [R]ock [P]aper [S]cissors :").upper()
+    CHOICE = d[USER_INPUT]
+    if USER_INPUT not in OPTIONS:
+        print("Not in the Options\n[R]ock, [P]aper, [S]cissors\n")
+    elif CC == CHOICE:
         print("..DRAW..\n")
-    elif computer_choice == "PAPER" and user_input == "STONE":
-        lose += 1
-        print(f"COMPUTER CHOICE WAS {computer_choice}")
+    elif CC == "PAPER" and CHOICE == "STONE":
+        LOSE += 1
+        print(f"COMPUTER CHOICE WAS {CC}")
         print("..COMPUTER WIN..\n")
-    elif computer_choice == "SCISSORS" and user_input == "PAPER":
-        lose += 1
-        print(f"COMPUTER CHOICE WAS {computer_choice}")
+    elif CC == "SCISSORS" and CHOICE == "PAPER":
+        LOSE += 1
+        print(f"COMPUTER CHOICE WAS {CC}")
         print("..COMPUTER WIN..\n")
-    elif computer_choice == "STONE" and user_input == "SCISSORS":
-        lose += 1
-        print(f"COMPUTER CHOICE WAS {computer_choice}")
+    elif CC == "STONE" and CHOICE == "SCISSORS":
+        LOSE += 1
+        print(f"COMPUTER CHOICE WAS {CC}")
         print("..COMPUTER WIN..\n")
     else:
-        win += 1
-        print(f"COMPUTER CHOICE WAS {computer_choice}")
+        WIN += 1
+        print(f"COMPUTER CHOICE WAS {CC}")
         print("..YOU WIN..\n")
 
 
 
-print(f"COMPUTER WON {lose} TIMES.\nYOU WON {win} TIMES.\nDRAW BETWEEN BOTH {n - (win + lose)} TIMES")
+print(f"COMPUTER WON {LOSE} TIMES.\nYOU WON {WIN} TIMES.")
