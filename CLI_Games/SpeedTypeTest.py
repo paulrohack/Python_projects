@@ -14,6 +14,11 @@ def mean(n):
     return round((total_sum/total_nos), 2)
 time_taken = []
 turns = int(input("How may Turns Would you want to try [recommended: 15 or 30 or 60]:  "))
+if turns < 10:
+    print("Number of words are taken as 10, because of the very less word limit!")
+    turns = 10
+
+words_made_wrong = []
 os.system('cls')
 print("When your ready hit ENTER!")
 if input() == "":
@@ -25,8 +30,9 @@ if input() == "":
         end = time.time()
         Time = end-start
         if word[0] != word_given:
-            print("Wrong Word")
+            words_made_wrong.append(word_given)
         else:
             time_taken.append(Time)
         os.system('cls')
-    print("Word Per Second", mean(time_taken))
+    print("WPS >>", mean(time_taken), f"\nThat means you took Average of {mean(time_taken)} seconds.")
+    print("Words that need More Practice", words_made_wrong)
