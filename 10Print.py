@@ -27,5 +27,5 @@ while True:
 
     py.display.update()
     for events in py.event.get():
-        if events.type == py.QUIT:
+        if events.type == py.QUIT:       
             py.quit()
