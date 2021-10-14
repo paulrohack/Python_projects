@@ -2,10 +2,10 @@ from tkinter import *
 import webbrowser
 import subprocess
 root = Tk()
-mailpath = 'GUI\\assets\MAIL.png'
-mapspath = 'GUI\\assets\MAPS.png'
-youtubepath = 'GUI\\assets\YOUTUBE.png'
-googlepath = 'GUI\\assets\GOOGLE.png'
+mailpath = 'assets\MAIL.png'
+mapspath = 'assets\MAPS.png'
+youtubepath = 'assets\YOUTUBE.png'
+googlepath = 'assets\GOOGLE.png'
 
 root.geometry('690x275')
 root.maxsize(width=690, height=275)

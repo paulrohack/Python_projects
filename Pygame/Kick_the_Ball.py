@@ -3,15 +3,15 @@ pygame.init()
 W =  900
 H =  600
 WIN = pygame.display.set_mode((W, H))
-bg = pygame.image.load("Pygame\\assets\Background_football.png")
+bg = pygame.image.load("assets\Background_football.png")
 
-goal = pygame.image.load("Pygame\\assets\Goal_Football.png").convert_alpha()
+goal = pygame.image.load("assets\Goal_Football.png").convert_alpha()
 goal = pygame.transform.scale(goal, (300,300))
 # goal = pygame.transform.rotate(goal, -90)
 
-player = pygame.image.load("Pygame\\assets\Player-Football.png").convert_alpha()
+player = pygame.image.load("assets\Player-Football.png").convert_alpha()
 player = pygame.transform.scale(player, (100,100))
-goalkeeper = pygame.image.load("Pygame\\assets\GoalKeeper-Football.png").convert_alpha()
+goalkeeper = pygame.image.load("assets\GoalKeeper-Football.png").convert_alpha()
 goalkeeper = pygame.transform.scale(goalkeeper, (200,200))
 
 

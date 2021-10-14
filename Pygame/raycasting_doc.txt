@@ -26,7 +26,7 @@ CASTED_RAYS = 120
 STEP_ANGLE = FOV / CASTED_RAYS
 
 # global variables
-player_img = pygame.image.load('Pygame\\assets\\Player.png')
+player_img = pygame.image.load('assets\\Player.png')
 player_img = pygame.transform.scale(player_img, (50,50))
 player_x = (SCREEN_WIDTH / 2) + 25
 player_y = (SCREEN_WIDTH / 2) - 10

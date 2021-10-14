@@ -10,7 +10,7 @@ WIDTH, HEIGHT = 750, 680
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Shooter")
 pygame.mixer.music.set_volume(0.3)
-path = 'Pygame\\assets\\'
+path = 'assets\\'
 song = pygame.mixer.music.load(path + 'song.mp3')
 pygame.mixer.music.play(-1)
 #Load Icons

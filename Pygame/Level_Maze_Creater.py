@@ -7,7 +7,7 @@ cube_s = 50
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 
-player_img = pygame.image.load('Pygame\\assets\\Player.png').convert_alpha()
+player_img = pygame.image.load('assets\\Player.png').convert_alpha()
 player_img = pygame.transform.scale(player_img, (50,50))
 
 
