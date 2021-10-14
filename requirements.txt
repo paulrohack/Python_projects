@@ -15,4 +15,4 @@ bs4
 # face_recognition
 opencv-python
 serial
-rotatescreen
+# rotatescreen

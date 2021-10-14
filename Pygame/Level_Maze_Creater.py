@@ -23,9 +23,9 @@ map_ = [
     [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     [1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+    [1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1],
+    [1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
     [1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
     [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
     [1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
@@ -75,24 +75,7 @@ class player:
                 # covert target X, Y coordinate to map col, row
                 col = int(target_x / WIDTH//12)
                 row = int(target_y / WIDTH//12)
-                # print(row, col)
-                # calculate map square index
-                # square = row * 12 + col
-                # print(map_[int(self.x)//cube_s][int(self.y)//cube_s])
-
-                # ray hits the condition
-                # if map_[row][col] == 1:
-                #     # highlight wall that has been hit by a casted ray
-                #     pygame.draw.rect(WIN, (0, 255, 0), (col * WIDTH//12,
-                #                                         row * WIDTH//12,
-                #                                         WIDTH//12 - 2,
-                #                                         WIDTH//12 - 2))
-
-                #     # draw casted ray
-                # pygame.draw.line(WIN, (255, 255, 0), (self.x, self.y), (target_x, target_y))
-                # break
-
-            # increment angle by a single step
+    
             start_angle += (math.pi/3) /  120    
             
 
