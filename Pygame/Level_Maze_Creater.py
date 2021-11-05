@@ -92,7 +92,7 @@ while True:
         # player_img = pygame.transform.rotate(player_img, player_angle)
     if keys[pygame.K_RIGHT]: 
         pa += 0.1
-        # player_img = pygame.transform.rotate(player_img, player_angle)
+
     if keys[pygame.K_UP]:
         man.x += -math.sin(pa) * 5
         man.y += math.cos(pa) * 5
