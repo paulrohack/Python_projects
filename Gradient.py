@@ -20,6 +20,8 @@ class Gradient_lines:
             if self.blue < 254: self.blue += self.b
             if self.green < 254: self.green += self.g
             self.i += 1
+        else:
+            return True
         pygame.draw.line(self.root, (self.red, self.green, self.blue), (self.s_pos[0], self.s_pos[1] + self.i), (self.f_pos[0], self.f_pos[1] + self.i))
 
 class Gradient_circles:
@@ -42,15 +44,19 @@ class Gradient_circles:
             if self.blue < 254: self.blue += self.b
             if self.green < 254: self.green += self.g
             self.i += 1
+        else:
+            return True
         pygame.draw.circle(self.root, (self.red, self.green, self.blue), (self.pos[0], self.pos[1]), self.rad - self.i)
 
 
 
-line = Gradient_lines((0, 0), (200, 0), 200, (0, 1, 1), WIN)
-circle = Gradient_circles((400, 200), 150, (1, 1, 1), WIN)
+
+line = Gradient_lines((0, 0), (W, 0), H, (1, 0, 1), WIN)
+circle = Gradient_circles((W//2, H//2), 150, (1, 1, 1), WIN)
 while True:
     line.draw()
-    circle.draw()
+    if line.draw():
+        circle.draw()
     pygame.display.update()
     for events in pygame.event.get():
         if events.type == pygame.QUIT:
