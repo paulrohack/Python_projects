@@ -1,4 +1,4 @@
-import time
+import time, colorama
 from random import choice
 import os
 
@@ -10,8 +10,7 @@ for i in (w):
 def mean(n):
     total_sum = sum(n)
     total_nos = len(n)
-    if total_nos == 0:
-        total_nos = 0.1
+    if total_nos == 0: total_nos = 0.1
     return round((total_sum/total_nos), 2)
 time_taken = []
 os.system('cls')
