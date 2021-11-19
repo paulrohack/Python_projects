@@ -16,31 +16,31 @@ def volumedown(t):
             time.sleep(t)
 
 cap = cv2.VideoCapture(0)
-hand_detector = detector.HandDetector(maxHands=1, detectionCon=0.9)
+hand_detector = detector.HandDetector(maxHands=1, detectionCon=0.5)
 
 
 debug = True
 while True:
     _, img = cap.read()
     img = cv2.flip(img, 90)
-    img, detected = hand_detector.findHands(img, False)
-    box = hand_detector.findPosition(img, 0, False)
-    if detected:
-        finger = box[0]
+    # img, detected = hand_detector.findHands(img, False)
+    # box = hand_detector.findPosition(img, 0, False)
+    # if detected:
+    #     finger = box[0]
 
-        thumbfinger = finger[4]
-        indexfinger = finger[8]
+    #     thumbfinger = finger[4]
+    #     indexfinger = finger[8]
 
-        distance, _, _ = hand_detector.findDistance(thumbfinger, indexfinger, img, debug)
-        d = round(distance/100, 2)
-        if d > 2.0:
-            volumeup(0)
-        elif d > 1.0:
-            volumeup(0.3)
-        elif d > 0.5:
-            volumedown(0.3)
-        else:
-            volumedown(0)
+    #     distance, _, _ = hand_detector.findDistance(thumbfinger, indexfinger, img, debug)
+    #     d = round(distance/100, 2)
+    #     if d > 2.0:
+    #         volumeup(0)
+    #     elif d > 1.0:
+    #         volumeup(0.3)
+    #     elif d > 0.5:
+    #         volumedown(0.3)
+    #     else:
+    #         volumedown(0)
     if debug:
         cv2.imshow("Window", img)
 
