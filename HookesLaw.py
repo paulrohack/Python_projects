@@ -5,7 +5,7 @@ import sys
 H =  800
 W =  1000
 
-SIZE =  MASS = 200
+SIZE =  MASS = 100
 CONSTANT = 1
 MAX_DISTANCE = W - SIZE
 
@@ -24,8 +24,6 @@ class body:
         self.time = 0
 
     def physics(self, k, md, mass, b_color, s_color):
-        if py.mouse.get_pressed()[0]:
-            self.x, self.y = py.mouse.get_pos()
         if self.posd:
             self.i += self.a
         if self.negd:
@@ -44,6 +42,7 @@ class body:
         self.i_pos = (self.i * cos(self.w * self.time))
         py.draw.rect(self.root, b_color, (self.x + self.i, self.y, self.s, self.s)) # body
         py.draw.line(self.root, s_color, (0, self.y + self.s//2), (self.x + self.i, self.y + self.s//2), k) #spring
+        py.draw.rect(self.root, py.Color('brown'), (0, self.y, self.s/4, self.s)) # fixed point
 
         return self.a, self.w, self.i_pos, self.time
 
