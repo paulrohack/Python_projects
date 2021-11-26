@@ -5,7 +5,7 @@ font = pygame.font.SysFont("Helvetica Neue", 30)
 #variables
 X_VEL = 1
 Y_VEL = -2
-X_PADDLE = 5
+X_PADDLE = 1
 
 SCORE = 0
 # ICON = ('assets\\joystick.png')
