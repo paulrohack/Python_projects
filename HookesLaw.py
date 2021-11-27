@@ -28,6 +28,7 @@ class body:
         if self.negd:
             self.i -= self.a
 
+
         if self.i > md - mass - 10:
             self.negd = True
             self.posd = False
