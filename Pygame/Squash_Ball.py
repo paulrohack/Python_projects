@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 pygame.init()
 pygame.font.init()
 font = pygame.font.SysFont("Helvetica Neue", 30)
@@ -91,4 +91,5 @@ while True:
     for events in pygame.event.get():
         if events.type == pygame.QUIT:
             pygame.quit()
+            sys.exit()
 

@@ -1,6 +1,6 @@
 from  PIL import Image
 import pygame as py
-import cv2
+import cv2, sys
 
 cap = cv2.VideoCapture(0)
 cap.set(640, 0)
@@ -68,6 +68,7 @@ while True:
     for events in py.event.get():
         if events.type == py.QUIT:
             py.quit()
+            sys.exit()
 
 
     

@@ -355,4 +355,5 @@ def main_menu():
             if keys[pygame.K_RETURN]:
                 main()          
     pygame.quit()
+    sys.exit()
 main_menu()

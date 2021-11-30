@@ -1,5 +1,5 @@
 from MyModules.NumberSystem_conversion import *
-import pygame, datetime
+import pygame, datetime, sys
 pygame.font.init()
 W =  600
 H =  300
@@ -74,6 +74,7 @@ while True:
     for events in pygame.event.get():
         if events.type == pygame.QUIT:
             pygame.quit()
+            sys.exit()
 
 
 

@@ -1,5 +1,6 @@
 import pygame as py
 from matplotlib import pyplot as plt
+import sys
 
 import time
 W, H = 600, 600
@@ -37,3 +38,4 @@ while True:
     for events in py.event.get():
         if events.type == py.QUIT:
             py.quit()
+            sys.exit()

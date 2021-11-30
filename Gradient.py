@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 W, H = 600, 600
 WIN = pygame.display.set_mode((W, H))
 WIN.fill(pygame.Color('white'))
@@ -61,4 +61,5 @@ while True:
     for events in pygame.event.get():
         if events.type == pygame.QUIT:
             pygame.quit()
+            sys.exit()
 

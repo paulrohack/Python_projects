@@ -1,5 +1,6 @@
 import pygame as py
-from random import choice  
+from random import choice 
+import sys 
 
 W, H = 600, 600
 WIN = py.display.set_mode((W, H))
@@ -29,3 +30,4 @@ while True:
     for events in py.event.get():
         if events.type == py.QUIT:       
             py.quit()
+            sys.exit()

@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 pygame.font.init()
 font = pygame.font.SysFont("Helvetica Neue", 30)
 
@@ -93,6 +93,7 @@ while True:
     for events in pygame.event.get():
         if events.type == pygame.QUIT:
             pygame.quit()
+            sys.exit()
         elif events.type == pygame.MOUSEBUTTONDOWN:
             if pos[0] > 0 and pos[0] < buttonx and pos[1] > H - buttony and pos[1] < H:
                 if n != len(colors)-1:

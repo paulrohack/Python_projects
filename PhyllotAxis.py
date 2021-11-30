@@ -1,5 +1,6 @@
 from  math import sin, cos, sqrt
-import pygame as py
+import pygame as py 
+import sys
 
 
 W, H = 600, 600
@@ -89,3 +90,4 @@ while True:
     for events in py.event.get():
         if events.type == py.QUIT:
             py.quit()
+            sys.exit()
