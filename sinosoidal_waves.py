@@ -28,8 +28,8 @@ for i in range(9):
 
 for x in xList:
     sin_yList.append(sin((1/(WAVE_LENGHT * scale)) * (x)) * AMPLITUDE * scale)
-    # cos_yList.append(sin((1/(WAVE_LENGHT * scale)) * (PHI - x)) * AMPLITUDE * scale)
-    # tan_yList.append(tan((1/(WAVE_LENGHT * scale)) * (x)) * AMPLITUDE * scale)
+    cos_yList.append(sin((1/(WAVE_LENGHT * scale)) * (PHI - x)) * AMPLITUDE * scale)
+    tan_yList.append(tan((1/(WAVE_LENGHT * scale)) * (x)) * AMPLITUDE * scale)
 
 if sin_yList != []:
     for x, y in zip(xList, sin_yList):
