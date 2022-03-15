@@ -12,7 +12,7 @@ b = py.Color('black')
 white = py.Color('white')
 font = py.font.SysFont("algerian", 10)
 n = 0
-char = ["#", "$", "0", "%", "+", "=", "|", "i", "-", ";", ".", " "]
+char = ["#", "$", "0", "%", "+", "=", "l", "i", "-", ";", ".", " "]
 WIN = py.display.set_mode((840, 680), py.RESIZABLE)
 while True:
     _, image = cap.read()

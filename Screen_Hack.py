@@ -1,3 +1,4 @@
+from email.charset import QP
 import rotatescreen, time
 import subprocess, os
 
@@ -14,8 +15,7 @@ with open("HACKED!!_LOL.txt", '+w') as f:
 subprocess.Popen(["notepad.exe","HACKED!!_LOL.txt"])
 # time.sleep(5)
 # os.popen("shutdown /l")
-    
-    
+
 
 
 
